@@ -15,6 +15,20 @@ A modern, responsive quiz app built with HTML, CSS, and JavaScript.
 - Data export (CSV/JSON)
 - Settings & Help modal
 
+## 🛠️ Tech Stack
+- HTML5
+- CSS3 (Flexbox, Grid)
+- JavaScript (ES6)
+- [Font Awesome](https://fontawesome.com/)
+
+## 🚀 Installation
+
+1. Clone the repo:
+   ```
+   git clone https://github.com/Kanaiya-rgb/quiz-app.git
+   ```
+2. Open `index.html` in your browser.
+
 ## 📸 Screenshots
 
 ### Home Page
@@ -38,14 +52,19 @@ A modern, responsive quiz app built with HTML, CSS, and JavaScript.
 ### Quiz Setting
 ![Quiz Setting](screenshots/quiz-setting.png)
 
-## 🛠️ How to Use
-1. Enter your name
-2. Select your field
-3. Answer questions within the timer
-4. Skip if unsure, see your results at the end!
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+Feel free to open an issue or submit a pull request.
+
+## 📬 Contact
+
+- [LinkedIn](https://www.linkedin.com/in/your-linkedin/)
+- Email: your-email@example.com
 
 ## 📝 License
-MIT
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
