@@ -16,8 +16,18 @@ A modern, responsive quiz app built with HTML, CSS, and JavaScript.
 - Settings & Help modal
 
 ## 📸 Screenshots
-<!-- Add screenshots here if you want -->
-<!-- ![Quiz App Screenshot](screenshot.png) -->
+
+### Home Page
+![Home Page](screenshots/home-page.png)
+
+### Field Selection
+![Field Selection](screenshots/field-selection.png)
+
+### Quiz Question
+![Quiz Question](screenshots/quiz-question.png)
+
+### Result Page
+![Result Page](screenshots/result-page.png)
 
 ## 🛠️ How to Use
 1. Enter your name
