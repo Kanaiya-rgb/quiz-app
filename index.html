@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="header-left">
+                <h2><i class="fas fa-brain"></i> Quiz Master</h2>
+            </div>
+            <div class="header-center">
+                <div class="user-info" id="user-info">
+                    <i class="fas fa-user"></i>
+                    <span id="header-user-name">Guest</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="current-time" id="current-time">
+                    <i class="fas fa-clock"></i>
+                    <span id="time-display">--:--</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-content">
+                <div class="welcome-header">
+                    <div class="welcome-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h1>🎯 Quiz App</h1>
+                    <p id="welcome-message">Test your knowledge with our interactive quiz!</p>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-label">Best Score</span>
+                            <span id="best-score" class="stat-value">0</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-label">Total Questions</span>
+                            <span id="total-questions" class="stat-value">0</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-label">Streak</span>
+                            <span id="current-streak" class="stat-value">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="welcome-features">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                        <span>AI Generated Questions</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                        <span>15 Second Timer</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⏩</div>
+                        <span>Skip Questions</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                        <span>Progress Tracking</span>
+                    </div>
+                </div>
+
+                <button id="start-btn" class="btn btn-primary">
+                    <i class="fas fa-play"></i>
+                    Start Quiz
+                </button>
+            </div>
+        </div>
+
+        <!-- Name Input Screen -->
+        <div id="name-screen" class="screen">
+            <div class="name-content">
+                <div class="name-header">
+                    <div class="name-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h1>👋 Welcome to Quiz App!</h1>
+                    <p>Please enter your name to get started</p>
+                </div>
+                <div class="name-input-container">
+                    <div class="input-group">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="name-input" placeholder="Enter your name..." maxlength="20">
+                    </div>
+                    <button id="continue-btn" class="btn btn-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Field Selection Screen -->
+        <div id="field-screen" class="screen">
+            <div class="field-content">
+                <div class="field-header">
+                    <div class="field-icon-main">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h1>🎓 Choose Your Field</h1>
+                    <p>Select your field of study for personalized questions</p>
+                </div>
+                <div class="field-grid">
+                    <div class="field-card" data-field="cse">
+                        <div class="field-icon">💻</div>
+                        <h3>Computer Science</h3>
+                        <p>Programming, Algorithms, Data Structures</p>
+                        <div class="field-stats">
+                            <span><i class="fas fa-code"></i> 50+ Questions</span>
+                        </div>
+                    </div>
+                    <div class="field-card" data-field="ece">
+                        <div class="field-icon">⚡</div>
+                        <h3>Electronics</h3>
+                        <p>Circuits, Communication, Signal Processing</p>
+                        <div class="field-stats">
+                            <span><i class="fas fa-microchip"></i> 45+ Questions</span>
+                        </div>
+                    </div>
+                    <div class="field-card" data-field="me">
+                        <div class="field-icon">⚙️</div>
+                        <h3>Mechanical</h3>
+                        <p>Thermodynamics, Mechanics, Manufacturing</p>
+                        <div class="field-stats">
+                            <span><i class="fas fa-cogs"></i> 40+ Questions</span>
+                        </div>
+                    </div>
+                    <div class="field-card" data-field="ce">
+                        <div class="field-icon">🏗️</div>
+                        <h3>Civil</h3>
+                        <p>Structures, Transportation, Environmental</p>
+                        <div class="field-stats">
+                            <span><i class="fas fa-building"></i> 35+ Questions</span>
+                        </div>
+                    </div>
+                    <div class="field-card" data-field="general">
+                        <div class="field-icon">🌟</div>
+                        <h3>General Knowledge</h3>
+                        <p>Mixed topics from all fields</p>
+                        <div class="field-stats">
+                            <span><i class="fas fa-globe"></i> 60+ Questions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="progress-container">
+                    <div class="progress-info">
+                        <div class="progress-left">
+                            <span id="question-counter">Question 1 of 15</span>
+                            <div class="score-display">
+                                <i class="fas fa-star"></i>
+                                <span id="current-score">0</span>
+                            </div>
+                        </div>
+                        <div class="progress-right">
+                            <div class="timer-container">
+                                <i class="fas fa-clock"></i>
+                                <span id="timer">15</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-content">
+                <div class="question-container">
+                    <div class="question-header">
+                        <i class="fas fa-question-circle"></i>
+                        <h2 id="question-text">Loading question...</h2>
+                    </div>
+                </div>
+
+                <div class="options-container">
+                    <button class="option-btn" data-index="0">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">Option A</span>
+                        <i class="fas fa-check option-icon"></i>
+                    </button>
+                    <button class="option-btn" data-index="1">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">Option B</span>
+                        <i class="fas fa-check option-icon"></i>
+                    </button>
+                    <button class="option-btn" data-index="2">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">Option C</span>
+                        <i class="fas fa-check option-icon"></i>
+                    </button>
+                    <button class="option-btn" data-index="3">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">Option D</span>
+                        <i class="fas fa-check option-icon"></i>
+                    </button>
+                </div>
+
+                <div class="quiz-actions">
+                    <button id="skip-btn" class="btn btn-secondary">
+                        <i class="fas fa-forward"></i>
+                         Skip Question
+                    </button>
+                    <div class="quiz-stats">
+                        <span class="stat-mini">
+                            <i class="fas fa-skipped"></i>
+                            Skipped: <span id="skipped-count">0</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen">
+            <div class="result-content">
+                <div class="result-header">
+                    <div class="result-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h1>🎉 Quiz Complete!</h1>
+                </div>
+                
+                <div class="score-container">
+                    <div class="score-circle">
+                        <div class="score-inner">
+                            <span id="final-score">0</span>
+                            <span class="score-label">out of</span>
+                            <span id="total-score">0</span>
+                        </div>
+                    </div>
+                    <div class="score-percentage">
+                        <span id="score-percentage">0%</span>
+                    </div>
+                </div>
+                
+                <div class="result-stats">
+                    <div class="result-stat">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Correct: <span id="correct-answers">0</span></span>
+                    </div>
+                    <div class="result-stat">
+                        <i class="fas fa-times-circle"></i>
+                        <span>Wrong: <span id="wrong-answers">0</span></span>
+                    </div>
+                    <div class="result-stat">
+                        <i class="fas fa-forward"></i>
+                        <span>Skipped: <span id="skipped-answers">0</span></span>
+                    </div>
+                </div>
+                
+                <div class="result-message" id="result-message">
+                    Great job! Keep learning!
+                </div>
+                <div class="emotional-feedback" id="emotional-feedback">
+                    <!-- Emotional feedback will be added here -->
+                </div>
+                <div class="best-score-info">
+                    <i class="fas fa-trophy"></i>
+                    <span>Best Score: </span>
+                    <span id="best-score-result">0</span>
+                </div>
+                <div class="action-buttons">
+                    <button id="restart-btn" class="btn btn-primary">
+                        <i class="fas fa-redo"></i>
+                        Play Again
+                    </button>
+                    <button id="home-btn" class="btn btn-secondary">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <span>&copy; 2025 Quiz Master. Made with ❤️</span>
+            </div>
+            <div class="footer-center">
+                <div class="footer-stats">
+                    <span><i class="fas fa-users"></i> <span id="total-users">1,234</span> Users</span>
+                    <span><i class="fas fa-question-circle"></i> <span id="total-questions-footer">500+</span> Questions</span>
+                </div>
+            </div>
+            <div class="footer-right">
+                <button class="footer-btn" id="settings-btn">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="footer-btn" id="help-btn">
+                    <i class="fas fa-question"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-cog"></i> Settings</h2>
+                <button class="modal-close" id="settings-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <h3>Quiz Preferences</h3>
+                    <div class="setting-item">
+                        <label for="timer-duration">Timer Duration (seconds):</label>
+                        <select id="timer-duration">
+                            <option value="10">10</option>
+                            <option value="15" selected>15</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label for="questions-count">Number of Questions:</label>
+                        <select id="questions-count">
+                            <option value="10">10</option>
+                            <option value="15" selected>15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="setting-group">
+                    <h3>Sound & Effects</h3>
+                    <div class="setting-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="sound-enabled" checked>
+                            <span class="checkmark"></span>
+                            Enable Sound Effects
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="animations-enabled" checked>
+                            <span class="checkmark"></span>
+                            Enable Animations
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="setting-group">
+                    <h3>Data Management</h3>
+                    <div class="setting-item">
+                        <button class="btn btn-secondary" id="clear-data-btn">
+                            <i class="fas fa-trash"></i>
+                            Clear All Data
+                        </button>
+                    </div>
+                    <div class="setting-item">
+                        <button class="btn btn-secondary" id="export-data-btn">
+                            <i class="fas fa-download"></i>
+                            Export Data
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="save-settings-btn">
+                    <i class="fas fa-save"></i>
+                    Save Settings
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="help-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-question-circle"></i> Help & Guide</h2>
+                <button class="modal-close" id="help-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="help-section">
+                    <h3><i class="fas fa-play"></i> How to Play</h3>
+                    <ol>
+                        <li>Enter your name to personalize your experience</li>
+                        <li>Select your field of study for relevant questions</li>
+                        <li>Answer questions within the time limit (15 seconds)</li>
+                        <li>Use the skip button if you're unsure about a question</li>
+                        <li>View your results and try to beat your best score!</li>
+                    </ol>
+                </div>
+                
+                <div class="help-section">
+                    <h3><i class="fas fa-star"></i> Features</h3>
+                    <ul>
+                        <li><strong>AI Generated Questions:</strong> Dynamic questions created by AI</li>
+                        <li><strong>Field-Specific Content:</strong> Questions tailored to your study area</li>
+                        <li><strong>Progress Tracking:</strong> Real-time score and progress updates</li>
+                        <li><strong>Best Score Saving:</strong> Your achievements are automatically saved</li>
+                        <li><strong>Emotional Feedback:</strong> Personalized feedback based on performance</li>
+                        <li><strong>Responsive Design:</strong> Works perfectly on all devices</li>
+                    </ul>
+                </div>
+                
+                <div class="help-section">
+                    <h3><i class="fas fa-trophy"></i> Scoring System</h3>
+                    <ul>
+                        <li><strong>90-100%:</strong> Outstanding - You're a quiz master! 🏆</li>
+                        <li><strong>80-89%:</strong> Excellent - Great knowledge! 🌟</li>
+                        <li><strong>70-79%:</strong> Good - Solid understanding! 👍</li>
+                        <li><strong>60-69%:</strong> Fair - Keep learning! 📚</li>
+                        <li><strong>Below 60%:</strong> Needs improvement - Don't give up! 💪</li>
+                    </ul>
+                </div>
+                
+                <div class="help-section">
+                    <h3><i class="fas fa-lightbulb"></i> Tips for Success</h3>
+                    <ul>
+                        <li>Read questions carefully before answering</li>
+                        <li>Don't spend too much time on one question</li>
+                        <li>Use the skip option for questions you're unsure about</li>
+                        <li>Practice regularly to improve your knowledge</li>
+                        <li>Try different fields to expand your expertise</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="help-close-btn">
+                    <i class="fas fa-check"></i>
+                    Got it!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner">
+                <i class="fas fa-brain"></i>
+            </div>
+            <h3>Loading Questions...</h3>
+            <p>Please wait while we prepare your quiz</p>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="questions.js"></script>
+    <script src="ai-questions.js"></script>
+    <script src="cse-questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
