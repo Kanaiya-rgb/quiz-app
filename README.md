@@ -23,11 +23,20 @@ A modern, responsive quiz app built with HTML, CSS, and JavaScript.
 ### Field Selection
 ![Field Selection](screenshots/field-selection.png)
 
+### Quiz Page
+![Quiz Page](screenshots/quiz-page.png)
+
 ### Quiz Question
 ![Quiz Question](screenshots/quiz-question.png)
 
-### Result Page
-![Result Page](screenshots/result-page.png)
+### Quiz Complete
+![Quiz Complete](screenshots/quiz-complete.png)
+
+### Quiz Guide
+![Quiz Guide](screenshots/quiz-guide.png)
+
+### Quiz Setting
+![Quiz Setting](screenshots/quiz-setting.png)
 
 ## 🛠️ How to Use
 1. Enter your name
