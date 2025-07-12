@@ -60,7 +60,7 @@ Feel free to open an issue or submit a pull request.
 ## 📬 Contact
 
 - [LinkedIn](https://www.linkedin.com/in/your-linkedin/)
-- Email: your-email@example.com
+- Email: kanaiyasoni688@gmail.com
 
 ## 📝 License
 
